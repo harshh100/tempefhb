@@ -1,0 +1,481 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/Quicksand_font_1/Quicksand-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeeee;
+  font-family: "Quicksand", sans-serif;
+  height: 100vh;
+}
+
+.dashbord-container {
+  width: 100%;
+}
+
+.nav-bar {
+  width: 100%;
+  background-image: url("../assets/header_pattern_svg.svg");
+  background-color: black;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
+  color: #fff;
+  min-height: 56px;
+}
+
+.nav-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.nav-bar-logo {
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+  z-index: 2;
+  gap: 32px;
+  transition: all 0.3s ease;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0px;
+}
+
+.nav-links a {
+  /* margin: 0 1.5rem; */
+  color: #3fd28b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #ffffff;
+  /* transition: width 0.3s ease; */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  display: none;
+  position: relative;
+  z-index: 3;
+}
+
+.menu-icon button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-icon button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .notifications {
+    margin-left: auto;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notifications {
+  margin-left: 32px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0px;
+}
+
+.alert-count {
+  position: absolute;
+  top: -5px;
+  left: 12px;
+  background-color: #2a7ff3;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+.announcement-count {
+  position: absolute;
+  top: -5px;
+  right: 50px;
+  background-color: #2a7ff3;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.profile-role {
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  font-size: 12px;
+  text-align: center;
+  color: #000;
+}
+
+.stats-section {
+  font-family: "Quicksand";
+  margin: 2rem;
+  background: #8ddc97;
+  border-radius: 3px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stat-item {
+  font-family: "Quicksand";
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stat-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-info h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-info p {
+  font-family: "Quicksand";
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+}
+
+.courses-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort-select {
+  width: 10rem;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #eeeeee;
+  outline: none;
+  color: #222222;
+  appearance: none;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  opacity: 1;
+  background-image: url("../assets/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+.sort-btn {
+  transform: rotate(90deg);
+  border: 0px;
+}
+
+.line {
+  margin: -20px 30px 17px 30px;
+  border-bottom: 1px solid #686868;
+  opacity: 0.12;
+}
+
+.courses-grid {
+  padding: 0px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(476px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.course-card {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.course-image {
+  width: 132px;
+  height: 157px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-and-info{
+  display: flex;
+  gap: 1rem;
+}
+
+.course-content {
+  padding: 1.5rem;
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-title {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222222;
+}
+
+.sub-grade{
+  height: 15px;
+  display: flex;
+  margin: 7px 0px;
+  align-items: center;
+  gap:9px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #666666;
+}
+
+.sub-grade .sub-line{
+  border-left: 1px solid #666666;
+  opacity: 0.12;
+  height: 12px;;
+}
+
+.unit-lessons-topic{
+  display: flex;
+  gap: 6px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #666666;
+}
+
+.unit-lessons-topic .count{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #222222;
+}
+
+.classs-info{
+  display: flex;
+  gap: 6px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #666666;
+}
+
+.classs-info .sub-line{
+  border-left: 1px solid #666666;
+  opacity: 0.12;
+  height: 12px;;
+}
+
+.class-selection select {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  outline: none;
+  color: #222222;
+  appearance: none;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  opacity: 1;
+  background-image: url("../assets/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.action-btn:hover {
+  background: #f8f9fa;
+  border-color: #3fd28b;
+  color: #3fd28b;
+}
+
+.star-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  color: #ffd700;
+  font-size: 20px;
+}
+
+.expired-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ff4757;
+  color: white;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
